@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+        
+        <bean id="halloween" class="com.example.demo.Holiday">
+        	<property name="month" value="10"></property>
+        	<property name="day" value="31"></property>
+        	<property name="greeting" value="Happy Halloween"></property>
+        </bean> 
+        
+        <bean id="newYear" class="com.example.demo.Holiday">
+        	<property name="month" value="1"></property>
+        	<property name="day" value="1"></property>
+        	<property name="greeting" value="Happy New Year"></property>
+        </bean> 
+  
+  		<bean id="helloWorld" class="com.example.demo.HelloWorld">
+  		<property name="holidays">
+  			<list>
+  				<ref bean="halloween" />
+  				<ref bean="newYear"/>
+  			</list>
+  		</property>
+  		<property name="message" value="Welcome to world of Spring Boot"></property>
+  		
+  		</bean>
+
+</beans>
